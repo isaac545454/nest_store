@@ -20,6 +20,7 @@ export class UserService {
     const passwordHash = await hash(createUserDTO.password, salt);
     return this.userRepository.save({
       ...createUserDTO,
+      typeUser: 1,
       password: passwordHash,
     });
   }
