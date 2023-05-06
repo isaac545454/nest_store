@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { CityEntity } from '../../city/entityes/city.entitty';
+import { CityEntity } from '../../city/entityes/city.entity';
 import {
   Column,
   CreateDateColumn,

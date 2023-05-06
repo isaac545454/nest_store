@@ -1,5 +1,6 @@
 /* eslint-disable prettier/prettier */
 
+import { User } from 'src/user/entityes/user.entity';
 import {
   Column,
   CreateDateColumn,
@@ -37,7 +38,7 @@ export class AddressEntity {
   @UpdateDateColumn({ name: 'updated_at' })
   updatedAt: Date;
 
-  // @ManyToOne(() => UserEntity, (user) => user.addresses)
+  // @ManyToOne(() => User, (user) => user.addresses)
   // @JoinColumn({ name: 'user_id', referencedColumnName: 'id' })
   // user?: UserEntity;
 
