@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import {
   BadRequestException,
   forwardRef,
@@ -68,30 +69,30 @@ export class ProductService {
     productId?: number[],
     isFindRelations?: boolean,
   ): Promise<ProductEntity[]> {
-    let findOptions = {};
+    // let findOptions = {};
 
-    if (productId && productId.length > 0) {
-      findOptions = {
-        where: {
-          id: In(productId),
-        },
-      };
-    }
+    // if (productId && productId.length > 0) {
+    //   findOptions = {
+    //     where: {
+    //       id: In(productId),
+    //     },
+    //   };
+    // }
 
-    if (isFindRelations) {
-      findOptions = {
-        ...findOptions,
-        relations: {
-          category: true,
-        },
-      };
-    }
+    // if (isFindRelations) {
+    //   findOptions = {
+    //     ...findOptions,
+    //     relations: {
+    //       category: true,
+    //     },
+    //   };
+    // }
 
-    const products = await this.productRepository.find(findOptions);
+    const products = await this.productRepository.find();
 
-    if (!products || products.length === 0) {
-      throw new NotFoundException('Not found products');
-    }
+    // if (!products || products.length === 0) {
+    //   throw new NotFoundException('Not found products');
+    // }
 
     return products;
   }

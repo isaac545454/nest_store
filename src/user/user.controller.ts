@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import {
   Body,
   Controller,
@@ -33,7 +34,7 @@ export class UserController {
     return this.userService.createUser(createUser);
   }
 
-  @Roles(UserType.Admin, UserType.Root)
+  // @Roles(UserType.Admin, UserType.Root)
   @Get('/all')
   async getAllUser(): Promise<ReturnUserDto[]> {
     return (await this.userService.getAllUser()).map(
@@ -59,7 +60,7 @@ export class UserController {
     return this.userService.updatePasswordUser(updatePasswordDTO, userId);
   }
 
-  @Roles(UserType.Admin, UserType.Root, UserType.User)
+  // @Roles(UserType.Admin, UserType.Root, UserType.User)
   @Get()
   async getInfoUser(@UserId() userId: number): Promise<ReturnUserDto> {
     return new ReturnUserDto(
